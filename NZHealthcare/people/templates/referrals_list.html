@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %}Referrals List - NZ Healthcare{% endblock %} {% block content %}
+<h1>Referrals List</h1>
+<ul>
+  {% for referral in referrals %}
+  <li>
+    <a href="{% url 'referral_detail' referral.id %}"
+      >{{ referral.person.first_name }} {{ referral.person.last_name }} - {{
+      referral.referral_date }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

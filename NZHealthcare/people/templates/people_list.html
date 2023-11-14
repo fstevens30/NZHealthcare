@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %}People List -
+NZHealthcare{%endblock%} {% block content %}
+<h1>People List</h1>
+<ul>
+  {% for person in people %}
+  <li>
+    <a href="{% url 'person_detail' person.id %}"
+      >{{ person.first_name }} {{ person.last_name }} ({{ person.dob }})</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}NZ Healthcare{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <img src="{% static 'img/logo.png' %}" alt="NZ Healthcare Logo" />
+      <nav>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'people_list' %}">People</a></li>
+          <li><a href="{% url 'referrals_list' %}">Referrals</a></li>
+          <li><a href="{% url 'admin:index' %}">Admin Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>
+      <p>©NZ Healthcare, 2023</p>
+    </footer>
+  </body>
+</html>

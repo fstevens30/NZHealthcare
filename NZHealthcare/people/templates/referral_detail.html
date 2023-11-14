@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %}Referral Detail - NZ Healthcare{%endblock %} {% block content %}
+<h1>Referral Detail</h1>
+<p>Referral Date: {{ referral.referral_date }}</p>
+<p>Referrer Name: {{ referral.referrer_name }}</p>
+<p>Referral Reason: {{ referral.referral_reason }}</p>
+<p>Note: {{ referral.note }}</p>
+{% if referral.document %}
+<p><a href="{{ referral.document.url }}" target="_blank">View Document</a></p>
+{% endif %}
+<p>
+  Related Person: {{ referral.person.first_name }} {{ referral.person.last_name }}
+</p>
+{% endblock %}
