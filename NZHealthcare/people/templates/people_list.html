@@ -1,13 +1,22 @@
 {% extends 'base.html' %} {% block title %}People List -
 NZHealthcare{%endblock%} {% block content %}
-<h1>People List</h1>
-<ul>
+<table>
+  <tr>
+    <td>
+      <h1>People List</h1>
+    </td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <th>Phone Number</th>
+  </tr>
   {% for person in people %}
-  <li>
-    <a href="{% url 'person_detail' person.id %}"
-      >{{ person.first_name }} {{ person.last_name }} ({{ person.dob }})</a
-    >
-  </li>
+  <a href="{% url 'person_detail' person.id %}">
+    <tr>
+      <td>{{ person.last_name }}, {{ person.first_name }}</td>
+      <td>{{ person.phone_number }}</td>
+    </tr>
+  </a>
   {% endfor %}
-</ul>
+</table>
 {% endblock %}
