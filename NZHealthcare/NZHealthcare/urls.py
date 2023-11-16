@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('patients/', views.patient_list, name='patient_list'),
     path('referrals/', views.referrals_list, name='referrals_list'),
-    path('patient/<int:person_id>/', views.patient_detail, name='patient_detail'),
+    path('patient/<int:patient_id>/', views.patient_detail, name='patient_detail'),
     path('referral/<int:referral_id>/',
          views.referral_detail, name='referral_detail'),
 ]
