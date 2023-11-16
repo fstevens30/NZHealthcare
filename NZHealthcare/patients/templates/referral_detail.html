@@ -8,6 +8,7 @@
 <p><a href="{{ referral.document.url }}" target="_blank">View Document</a></p>
 {% endif %}
 <p>
-  Related Person: {{ referral.person.first_name }} {{ referral.person.last_name }}
+  Related Patient: {{ referral.patient.first_name }} {{
+  referral.patient.last_name }}
 </p>
 {% endblock %}

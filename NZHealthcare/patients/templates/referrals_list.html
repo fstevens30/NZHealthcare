@@ -4,7 +4,7 @@
   {% for referral in referrals %}
   <li>
     <a href="{% url 'referral_detail' referral.id %}"
-      >{{ referral.person.first_name }} {{ referral.person.last_name }} - {{
+      >{{ referral.person.first_name }} {{ referral.patient.last_name }} - {{
       referral.referral_date }}</a
     >
   </li>

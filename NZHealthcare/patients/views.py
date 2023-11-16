@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Person, Referral
+from .models import Patient, Referral
 
 # Create your views here.
 
@@ -12,9 +12,9 @@ def home(request):
 
 
 @login_required
-def people_list(request):
-    people = Person.objects.all()
-    return render(request, 'people_list.html', {'people': people})
+def patient_list(request):
+    patients = Patient.objects.all()
+    return render(request, 'patient_list.html', {'patients': patients})
 
 
 @login_required
@@ -24,10 +24,10 @@ def referrals_list(request):
 
 
 @login_required
-def person_detail(request, person_id):
-    person = get_object_or_404(Person, id=person_id)
-    referrals = Referral.objects.filter(person=person)
-    return render(request, 'person_detail.html', {'person': person, 'referrals': referrals})
+def patient_detail(request, patient_id):
+    patient = get_object_or_404(Patient, id=patient_id)
+    referrals = Referral.objects.filter(patient=patient)
+    return render(request, 'patient_detail.html', {'patient': patient, 'referrals': referrals})
 
 
 @login_required

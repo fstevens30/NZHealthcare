@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %}Patient List{%endblock%} {% block content %}
+<table>
+  <tr>
+    <td>
+      <h1>Patient List</h1>
+    </td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <th>Phone Number</th>
+  </tr>
+  {% for patient in patients %}
+  <a href="{% url 'patient.detail' person.id %}">
+    <tr>
+      <td>{{ patient.last_name }}, {{ patient.first_name }}</td>
+      <td>{{ patient.phone_number }}</td>
+    </tr>
+  </a>
+  {% endfor %}
+</table>
+{% endblock %}
