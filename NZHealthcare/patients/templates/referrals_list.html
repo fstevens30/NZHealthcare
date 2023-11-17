@@ -6,13 +6,9 @@
     <th>Referral Date</th>
   </tr>
   {% for referral in referrals %}
-  <tr>
+  <tr onclick="window.location.href='{% url 'referral_detail' referral.id %}'" style="cursor: pointer;">
     <td> {{ referral.patient.last_name }}, {{ referral.patient.first_name }} </td>
-    <td>
-      <a href="{% url 'referral_detail' referral.id %}">
-        {{ referral.referral_date }}
-      </a>
-    </td>
+    <td> {{ referral.referral_date }} </td>
   </tr>
   {% endfor %}
 </table>

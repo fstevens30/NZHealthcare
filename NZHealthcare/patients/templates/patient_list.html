@@ -6,12 +6,10 @@
     <th>Phone Number</th>
   </tr>
   {% for patient in patients %}
-    <tr>
+    <tr onclick="window.location.href='{% url 'patient_detail' patient.id %}'"; style="cursor: pointer;">
       <td>
         <p>
-          <a href="{% url 'patient_detail' patient.id %}">
             {{ patient.last_name }}, {{ patient.first_name }}
-          </a>
         </p>
       </td>
       <td>{{ patient.phone_number }}</td>
