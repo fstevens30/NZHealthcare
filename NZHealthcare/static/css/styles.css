@@ -23,15 +23,13 @@ a {
 header {
     overflow: hidden;
     background-color: #7f95d1;
-}
-
-#main-header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-#main-header h1 {
+
+header h1 {
     font-size: 2.5em;
     flex-grow: 1;
     text-align: center;
@@ -44,7 +42,7 @@ nav {
     width: 100%;
 }
 
-header a {
+nav a {
     display: inline-block;
     color: #f1f1f1;
     background-color: #333;
@@ -53,7 +51,7 @@ header a {
     padding: 1em;
 }
 
-header a:hover {
+nav a:hover {
     background-color: #EC9A29;
     color: #333;
 }
@@ -109,4 +107,16 @@ tr:nth-child(even) {
 
 tr:hover {
     background-color: #ddd;
+}
+
+/* Responsiveness */
+
+@media screen and (min-width: 58rem) {
+
+    nav {
+        flex-direction: row;
+        text-align: center;
+    }
+
+    main {}
 }
