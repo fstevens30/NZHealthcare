@@ -4,8 +4,6 @@ from .models import Patient, Referral
 
 # Create your views here.
 
-# Home page view
-
 
 def home(request):
     return render(request, 'home.html')
