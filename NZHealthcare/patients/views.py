@@ -9,6 +9,10 @@ def home(request):
     return render(request, 'home.html')
 
 
+def login(request):
+    return render(request, 'login.html')
+
+
 @login_required
 def patient_list(request):
     patients = Patient.objects.all()
