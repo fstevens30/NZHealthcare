@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
 
 # Create your models here.
 
@@ -17,10 +18,10 @@ class Referral(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     referral_date = models.DateField()
     referrer_name = models.CharField(max_length=150)
-    referral_reason = models.TextField(max_length=150)
+    referral_reason = models.TextField(max_length=80)
     note = models.TextField()
     document = models.FileField(
-        upload_to='referral_documents/', null=True, blank=True)
+        upload_to='referral_documents/', null=True, blank=True, validators=[FileExtensionValidator(['pdf'])])
 
     def __str__(self):
         return f'{self.patient} - {self.referrer_name} - {self.referral_date}'

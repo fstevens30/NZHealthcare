@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Patient, Referral
 from .forms import PatientForm, ReferralForm
@@ -66,3 +67,17 @@ def patient_detail(request, patient_id):
 def referral_detail(request, referral_id):
     referral = get_object_or_404(Referral, id=referral_id)
     return render(request, 'referral_detail.html', {'referral': referral})
+
+
+@login_required
+def view_document(request, referral_id):
+    referral = get_object_or_404(Referral, id=referral_id)
+
+    if referral.document:
+        with open(referral.document.path, 'rb') as document_file:
+            response = HttpResponse(
+                document_file.read(), content_type='application/pdf')
+            response['Content-Disposition'] = f'inline; filename={referral.document.name}'
+            return response
+    else:
+        return HttpResponse("Document not found", status=404)

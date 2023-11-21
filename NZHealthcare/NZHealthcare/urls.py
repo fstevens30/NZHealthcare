@@ -30,4 +30,6 @@ urlpatterns = [
     path('add_referral/<int:patient_id>/',
          views.add_referral, name='add_referral'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('referral/<int:referral_id>/view_document/',
+         views.view_document, name='view_document'),
 ]
