@@ -24,14 +24,14 @@ header {
     overflow: hidden;
     background-color: #7f95d1;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
 
 header h1 {
     font-size: 2.5em;
-    flex-grow: 1;
     text-align: center;
 }
 
@@ -57,8 +57,30 @@ nav a:hover {
 }
 
 img {
-    max-width: 10em;
+    max-width: 8em;
     height: auto;
+}
+
+/* Login / Logout */
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.login a {
+    color: #f1f1f1;
+    padding: 1em;
+}
+
+.login a:hover {
+    color: #EC9A29;
+    text-decoration: underline;
+}
+
+.login p {
+    color: #f1f1f1;
+    padding: 1em;
 }
 
 /* Footer */
@@ -113,14 +135,50 @@ tr:hover {
     background-color: #ddd;
 }
 
+/* Forms */
+
+form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    text-align: center;
+}
+
+form input[type=text], form input[type=password] {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #333;
+    color: #f1f1f1;
+    padding: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 1em;
+}
+
+form button:hover {
+    background-color: #EC9A29;
+    color: #333;
+}
+
 /* Responsiveness */
 
 @media screen and (min-width: 58rem) {
+
+    header {
+        flex-direction: row;
+    }
 
     nav {
         flex-direction: row;
         text-align: center;
     }
-
-    main {}
 }
