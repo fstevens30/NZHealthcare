@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block title %}Add Referral - NZ Healthcare{%endblock%} {% block content %}
 
-<h1>Add Referral</h1>
+<h1>Add Referral for {{ patient.first_name }} {{ patient.last_name }}</h1>
 
 <form method="POST" action="add_referral/">
     {% csrf_token %}

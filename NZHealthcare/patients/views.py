@@ -52,7 +52,7 @@ def add_referral(request, patient_id):
     else:
         form = ReferralForm()
 
-    return render(request, 'add_referral.html', {'form': form})
+    return render(request, 'add_referral.html', {'form': form, 'patient': patient})
 
 
 @login_required
