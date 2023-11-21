@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block title %}Add Patient - NZ Healthcare{%endblock%} {% block content %}
+
+<h1>Add Patient</h1>
+
+<form method="POST" action="{% url 'add_patient' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Patient</button>
+</form>
+
+{% endblock %}

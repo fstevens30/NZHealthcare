@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block title %}Patients - NZ Healthcare{%endblock%} {% block content %}
 <h1>Patients</h1>
+<button onclick="window.location.href='{% url 'patient_new' %}'">Add Patient</button>
 <table>
   <tr>
     <th>Name</th>
