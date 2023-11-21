@@ -20,9 +20,19 @@ def patient_list(request):
 
 
 @login_required
+def patient_new(request):
+    return render(request, 'patient_new.html')
+
+
+@login_required
 def referrals_list(request):
     referrals = Referral.objects.all()
     return render(request, 'referrals_list.html', {'referrals': referrals})
+
+
+@login_required
+def referral_new(request):
+    return render(request, 'referral_new.html')
 
 
 @login_required
