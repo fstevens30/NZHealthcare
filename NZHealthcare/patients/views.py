@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Patient, Referral
 from .forms import PatientForm, ReferralForm
@@ -25,8 +25,8 @@ def add_patient(request):
     if request.method == 'POST':
         form = PatientForm(request.POST)
         if form.is_valid():
-            patient = form.save()
-            return render(request, 'patient_detail.html', {'patient': patient})
+            form.save()
+            return redirect('patient_list')
     else:
         form = PatientForm()
 
@@ -40,11 +40,14 @@ def referrals_list(request):
 
 
 @login_required
-def add_referral(request):
+def add_referral(request, patient_id):
+    patient = get_object_or_404(Patient, id=patient_id)
     if request.method == 'POST':
         form = ReferralForm(request.POST)
         if form.is_valid():
-            referral = form.save()
+            referral = form.save(commit=False)
+            referral.patient = patient
+            referral.save()
             return render(request, 'referral_detail.html', {'referral': referral})
     else:
         form = ReferralForm()

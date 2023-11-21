@@ -11,5 +11,5 @@ class PatientForm(forms.ModelForm):
 class ReferralForm(forms.ModelForm):
     class Meta:
         model = Referral
-        fields = ['patient', 'referral_date', 'referrer_name',
+        fields = ['referral_date', 'referrer_name',
                   'referral_reason', 'note', 'document']

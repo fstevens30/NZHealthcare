@@ -9,7 +9,7 @@
 <div class="referral-content">
 <p>Note: {{ referral.note }}</p>
 {% if referral.document %}
-<p><a href="{{ referral.document.url }}" target="_blank">View Document</a></p>
+<button onclick="window.open('{{ referral.document.url }}', '_blank')">View Document</button>
 {% endif %}
 </div>
 {% endblock %}

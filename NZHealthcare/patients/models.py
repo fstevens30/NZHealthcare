@@ -9,6 +9,9 @@ class Patient(models.Model):
     phone_number = models.CharField(max_length=12)
     date_of_birth = models.DateField()
 
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
 
 class Referral(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)

@@ -2,7 +2,7 @@
 
 <h1>Add Patient</h1>
 
-<form method="POST" action="add_patient/">
+<form method="POST" action= {% url 'add_patient' %} >
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Add Patient</button>

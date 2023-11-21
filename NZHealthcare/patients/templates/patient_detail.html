@@ -13,4 +13,7 @@
   </li>
   {% endfor %}
 </ul>
+<button onclick="window.location.href='{% url 'add_referral' patient.id %}'">
+  Add Referral
+</button>
 {% endblock %}
