@@ -21,3 +21,6 @@ class Referral(models.Model):
     note = models.TextField()
     document = models.FileField(
         upload_to='referral_documents/', null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.patient} - {self.referrer_name} - {self.referral_date}'
