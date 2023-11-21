@@ -154,7 +154,7 @@ form input[type=text], form input[type=password] {
     box-sizing: border-box;
 }
 
-form button {
+button {
     background-color: #333;
     color: #f1f1f1;
     padding: 1em;
@@ -164,7 +164,7 @@ form button {
     margin: 1em;
 }
 
-form button:hover {
+button:hover {
     background-color: #EC9A29;
     color: #333;
 }
