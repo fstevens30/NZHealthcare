@@ -27,6 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'django-portfolio.flynnstevens.link',
+    '52.62.194.201'
 ]
 
 
