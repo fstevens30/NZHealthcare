@@ -2,6 +2,7 @@
 {{patient.last_name }} - NZ Healthcare{% endblock %} {% block content %}
 <h1>{{ patient.first_name }} {{ patient.last_name }}</h1>
 <table>
+  <caption>Patient Details</caption>
   <tr>
     <th>Phone Number</th>
     <td>{{ patient.phone_number }}</td>
@@ -13,11 +14,9 @@
 </table>
 
 <table style="width:50%;">
-  <tr>
-    <th>Referrals</th>
-  </tr>
+  <caption>Referrals</caption>
   {% for referral in referrals %}
-  <td onclick = "window.location.href='{% url 'referral_detail' referral.id %}'" style="cursor: pointer;">
+  <td onclick="window.location.href='{% url 'referral_detail' referral.id %}'" style="cursor: pointer;">
     <p> {{ referral.referral_date }} - {{ referral.referrer_name }} </p>
   </td>
   {% endfor %}

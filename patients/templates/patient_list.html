@@ -2,19 +2,20 @@
 <h1>Patients</h1>
 <button onclick="window.location.href='{% url 'add_patient' %}'">Add Patient</button>
 <table>
+  <caption>Patients</caption>
   <tr>
     <th>Name</th>
     <th>Date of Birth</th>
   </tr>
   {% for patient in patients %}
-    <tr onclick="window.location.href='{% url 'patient_detail' patient.id %}'"; style="cursor: pointer;">
-      <td>
-        <p>
-            {{ patient.last_name }}, {{ patient.first_name }}
-        </p>
-      </td>
-      <td>{{ patient.date_of_birth }}</td>
-    </tr>
+  <tr onclick="window.location.href='{% url 'patient_detail' patient.id %}'" ; style="cursor: pointer;">
+    <td>
+      <p>
+        {{ patient.last_name }}, {{ patient.first_name }}
+      </p>
+    </td>
+    <td>{{ patient.date_of_birth }}</td>
+  </tr>
   {% endfor %}
 </table>
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block title %}Referral Detail - NZ Healthcare{%endblock %} {% block content %}
-<h1>Referral: {{ referral.patient.first_name }} {{ referral.patient.last_name }} - {{ referral.referral_date }}</h1>
 <table>
+  <caption>Referral: {{ referral.patient.first_name }} {{ referral.patient.last_name }} - {{ referral.referral_date }}
+  </caption>
   <tr>
     <th>Referral Date</th>
     <td>{{ referral.referral_date }}</td>
@@ -19,15 +20,13 @@
   </tr>
 </table>
 <table style="width:50%;">
-  <tr>
-    <th>Note</th>
-  </tr>
+  <caption>Notes</caption>
   <tr>
     <td>{{ referral.note }}</td>
   </tr>
-{% if referral.document %}
-<a href="{% url 'view_document' referral.id %}" target="_blank">
-  <button>View Document</button>
-</a>
-{% endif %}
-{% endblock %}
+  {% if referral.document %}
+  <a href="{% url 'view_document' referral.id %}" target="_blank">
+    <button>View Document</button>
+  </a>
+  {% endif %}
+  {% endblock %}
