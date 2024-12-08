@@ -15,6 +15,7 @@
 
 <table style="width:50%;">
   <caption>Referrals</caption>
+  <th>Referrals</th>
   {% for referral in referrals %}
   <td onclick="window.location.href='{% url 'referral_detail' referral.id %}'" style="cursor: pointer;">
     <p> {{ referral.referral_date }} - {{ referral.referrer_name }} </p>
